@@ -1,6 +1,6 @@
 name: Build APK
 
-on:
+of:
   workflow_dispatch:
   push:
     branches: [main]
