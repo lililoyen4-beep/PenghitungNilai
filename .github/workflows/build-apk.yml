@@ -25,8 +25,7 @@ jobs:
           unzip -q HARIAN-Android-Project.zip -d project
           gradle --no-daemon -p project :app:assembleDebug
 
-          gradle --no-daemon :app:assembleDebug
-
+        
       - uses: actions/upload-artifact@v4
         with:
           name: Penghitung-Nilai-APK
