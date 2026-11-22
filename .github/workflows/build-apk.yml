@@ -22,11 +22,12 @@ jobs:
 
       - name: Extract project
         run: |
-          unzip -q PenghitungNilaiAndroid_SiapBuildAPK.zip
-          cd PenghitungNilaiAndroid
+          unzip -q HARIAN-Android-Project.zip -d project
+          gradle --no-daemon -p project :app:assembleDebug
+
           gradle --no-daemon :app:assembleDebug
 
       - uses: actions/upload-artifact@v4
         with:
           name: Penghitung-Nilai-APK
-          path: PenghitungNilaiAndroid/app/build/outputs/apk/debug/app-debug.apk
+          path: project/app/build/outputs/apk/debug/*.apk
